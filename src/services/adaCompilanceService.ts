@@ -9,18 +9,14 @@ class AdaCompilanceService {
 
   constructor() {}
 
-  private static async waveApiService({
+  static async handleRequest({
     email,
     url,
   }: t.AdaCompilanceRequestArgs) {
-    const { data }: {data: t.WaveResponse} = await axios.get(
+    const { data }: { data: t.WaveResponse } = await axios.get(
       `${this.waveApiBaseUrl}?key=${this.waveApiKey}&url=${url}`
     );
-    return await EmailService.sendMail({ data, email });
-  }
-
-  static async handleRequest({ email, url }: t.AdaCompilanceRequestArgs) {
-    return await this.waveApiService({ email, url });
+    EmailService.sendMail({ data, email });
   }
 }
 

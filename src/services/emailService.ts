@@ -22,7 +22,8 @@ class EmailService {
   static async sendMail({ data, email }: t.EmailServiceArgs) {
     const emailTransporter = nodemailer.createTransport(this.config);
     const { statistics } = data;
-    return await emailTransporter.sendMail({
+    
+    emailTransporter.sendMail({
       from: this.senderAddress,
       to: email,
       subject: `Web Accessibility Test Results for ${statistics.pageurl}`,
