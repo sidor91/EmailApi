@@ -1,5 +1,5 @@
 import {Request, Response, NextFunction} from 'express'
-const { isEmail, isURL } = require('validator');
+import { isEmail, isURL } from 'validator';
 
 export const validateEmail = (req: Request, res: Response, next: NextFunction) => {
   const { email } = req.body;
