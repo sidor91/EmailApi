@@ -5,7 +5,7 @@ export const controllerWrapper = (controller: Controller) => {
   const func = async (req: Request, res: Response, next: NextFunction) => {
     try {
       await controller(req, res, next);
-    } catch (error) {
+    } catch (error: any) {
       next(error);
     }
   };

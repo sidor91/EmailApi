@@ -24,7 +24,7 @@ class EmailService {
       const emailTransporter = nodemailer.createTransport(this.config);
       const { statistics } = data;
 
-      emailTransporter.sendMail({
+      const response = await emailTransporter.sendMail({
         from: this.senderAddress,
         to: email,
         subject: `Web Accessibility Test Results for ${statistics.pageurl}`,
@@ -32,8 +32,11 @@ class EmailService {
         html: generateEmailLayout(data),
         attachments: [attachment],
       });
-    } catch (error) {
-      if (error instanceof Error) console.log(error.message);
+      if (response.response?.startsWith('250 OK')) {
+        return `The report for ${statistics.pageurl} was successfully sent to ${email}`;
+      } 
+    } catch (error: any) {
+      throw new Error('There was an error sending the email');
     }
   }
 }
