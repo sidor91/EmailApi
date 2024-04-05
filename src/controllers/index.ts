@@ -1,3 +1,3 @@
-import { adaCompilance } from "./adaCompilance";
+import { adaCompilance } from './adaCompilance';
 
-export default {adaCompilance}
+export default { adaCompilance };
