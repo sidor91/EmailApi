@@ -1,11 +1,12 @@
 import http from 'http';
 import app from './app';
 require('dotenv').config();
+import { startServerLogger } from './utils/startServerLogger';
 
-const port = process.env.PORT;
+const port = process.env.PORT as string;
 
 const server = http.createServer(app);
 
 server.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  startServerLogger(port);
 });
