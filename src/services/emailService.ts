@@ -20,17 +20,21 @@ class EmailService {
   constructor() {}
 
   static async sendMail({ data, email }: t.EmailServiceArgs) {
-    const emailTransporter = nodemailer.createTransport(this.config);
-    const { statistics } = data;
-    
-    emailTransporter.sendMail({
-      from: this.senderAddress,
-      to: email,
-      subject: `Web Accessibility Test Results for ${statistics.pageurl}`,
-      text: 'Hello world?',
-      html: generateEmailLayout(data),
-      attachments: [attachment],
-    });
+    try {
+      const emailTransporter = nodemailer.createTransport(this.config);
+      const { statistics } = data;
+
+      emailTransporter.sendMail({
+        from: this.senderAddress,
+        to: email,
+        subject: `Web Accessibility Test Results for ${statistics.pageurl}`,
+        text: 'Hello world?',
+        html: generateEmailLayout(data),
+        attachments: [attachment],
+      });
+    } catch (error) {
+      if (error instanceof Error) console.log(error.message);
+    }
   }
 }
 

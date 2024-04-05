@@ -13,10 +13,14 @@ class AdaCompilanceService {
     email,
     url,
   }: t.AdaCompilanceRequestArgs) {
-    const { data }: { data: t.WaveResponse } = await axios.get(
-      `${this.waveApiBaseUrl}?key=${this.waveApiKey}&url=${url}`
-    );
-    EmailService.sendMail({ data, email });
+    try {
+      const { data }: { data: t.WaveResponse } = await axios.get(
+        `${this.waveApiBaseUrl}?key=${this.waveApiKey}&url=${url}`
+      );
+      EmailService.sendMail({ data, email });
+    } catch (error) {
+       if (error instanceof Error) console.log(error.message);
+    }
   }
 }
 

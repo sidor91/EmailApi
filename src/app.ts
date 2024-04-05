@@ -1,11 +1,11 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
-import path from 'path';
+import morgan from 'morgan';
 import routes from './routes';
 
 const app = express();
 
-app.use(cors(), express.json());
+app.use(cors(), express.json(), morgan('dev'));
 
 app.get('/', (_: Request, res: Response) => {
   res.send(true);
