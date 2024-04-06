@@ -1,8 +1,8 @@
 import os from 'os';
 
-export const isLocal = () => os.hostname().split('.').pop() === 'local';
+const isLocal = () => os.hostname().split('.').pop() === 'local';
 
-const setHost = () =>
+export const setHost = () =>
   isLocal() ? `http://localhost` : `http://${os.hostname()}`;
 
 export const startServerLogger = async (port: string) => {
