@@ -1,11 +1,9 @@
-import { AxiosResponse } from "axios";
-
 export type AdaCompilanceRequestArgs = {
-  email: string;
   url: string;
-}
+  email: string;
+};
 
-export type EmailServiceArgs = {
+export type GenerateEmailPayload = {
   data: WaveResponse;
   email: string;
 };
@@ -30,3 +28,4 @@ export type WaveResponse = {
     aria: { description: string; count: number };
   };
 };
+

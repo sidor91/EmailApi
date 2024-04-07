@@ -1,0 +1,1 @@
+export const waveApiBaseUrl = 'https://wave.webaim.org/api/request';

@@ -1,4 +1,4 @@
-import { WaveResponse } from '../services/types';
+import { WaveResponse } from '../services/AdaCompilanceService/types';
 import { setHost } from './startServerLogger';
 
 export const generateEmailLayout = (data: WaveResponse) => {

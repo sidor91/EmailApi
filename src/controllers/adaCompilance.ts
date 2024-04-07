@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import AdaCompilanceService from '../services/adaCompilanceService';
+import AdaCompilanceService from '../services/AdaCompilanceService';
 
 export const adaCompilance = async (req: Request, res: Response) => {
   const { email, url } = req.body;
