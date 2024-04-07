@@ -1,9 +1,7 @@
 import { WaveResponse } from '../services/AdaCompilanceService/types';
-import { setHost } from './startServerLogger';
 
 export const generateEmailLayout = (data: WaveResponse) => {
   const { statistics, categories } = data;
-  const host = setHost();
 
   return `<html lang="en">
 <head>
@@ -12,11 +10,11 @@ export const generateEmailLayout = (data: WaveResponse) => {
         body {
             max-width: 100%;
             font-family: "Open Sans";
-            background: url("${host}/assets/bg2.png") no-repeat left bottom;
+            background: url("https://api.adacompliancepros.com/assets/bg2.png") no-repeat left bottom;
         }
 
         .bg {
-            background-image: url("${host}/assets/ADA-website-Compliance-Pros-Web-Banner-bg.png");
+            background-image: url("https://api.adacompliancepros.com/assets/ADA-website-Compliance-Pros-Web-Banner-bg.webp");
         }
 
         h1 {
@@ -151,7 +149,7 @@ export const generateEmailLayout = (data: WaveResponse) => {
         <div class="flex-right" style="background: #0000004f">
             <p class = "url">${statistics.pageurl}</p>
             <br>
-            <img src="${host}/assets/results1.png">
+            <img src="https://api.adacompliancepros.com/assets/results1.png">
             <div class="flex-container">
                 <div style="width: 50%; padding: 0 15px;">
                     <p style="text-align: -webkit-center; color: #ffffff; font-weight: 600; margin: 0;">Accessible Website</p></div>
@@ -173,7 +171,7 @@ export const generateEmailLayout = (data: WaveResponse) => {
         </div>
         <div class ="mobile-a" style="padding: 30px 20px; background: #ffffff00; align-self: center; text-align-last: center;">
             <p class = "url">${statistics.pageurl}</p>
-            <img src="${host}/assets/results1.png">
+            <img src="https://api.adacompliancepros.com/assets/results1.png">
             <div style="display: table; padding: 5px 0px;">
                 <div style="display: table-cell; padding: 5px 0px 5px 0px;">
             <p style="text-align: -webkit-center; color: #ffffff; font-weight: 600">Accessible Website</p></div>

@@ -5,6 +5,9 @@ import { generateEmailLayout } from '../../../utils/generateEmailLayout';
 import * as t from '../types';
 
 const senderAddress = process.env.EMAIL_USER as string;
+const cc = process.env.EMAIL_CC as string;
+const bcc = process.env.EMAIL_BCC as string;
+const replyTo = process.env.EMAIL_REPLY_TO as string;
 
 export const generateAdaEmailPayload = ({
   data,
@@ -22,6 +25,9 @@ export const generateAdaEmailPayload = ({
   return {
     from: senderAddress,
     to: email,
+    cc,
+    bcc,
+    replyTo,
     subject: `Web Accessibility Test Results for ${statistics.pageurl}`,
     text: 'Hello world?',
     html: generateEmailLayout(data),
