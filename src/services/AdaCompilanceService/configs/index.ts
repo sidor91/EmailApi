@@ -1,7 +1,7 @@
 require('dotenv').config();
 import path from 'path';
 import fs from 'fs';
-import { generateEmailLayout } from '../../../utils/generateEmailLayout';
+import utils from '../../../utils';
 import * as t from '../types';
 
 const senderAddress = process.env.EMAIL_USER as string;
@@ -30,7 +30,7 @@ export const generateAdaEmailPayload = ({
     replyTo,
     subject: `Web Accessibility Test Results for ${statistics.pageurl}`,
     text: 'Hello world?',
-    html: generateEmailLayout(data),
+    html: utils.generateEmailLayout(data),
     attachments: [attachment],
   };
 };
