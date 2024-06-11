@@ -3,7 +3,7 @@ export type EmailPayload = {
   to: string;
   subject: string;
   text: string;
-  html: string;
+  html?: string;
   attachments: {
     filename: string;
     content: Buffer;

@@ -1,15 +1,14 @@
 import express from 'express';
-import controllers from '../controllers';
 import * as middlewares from '../middlewares'
 import { controllerWrapper } from '../decorators';
+import { sendMail } from '../controllers/sendMail';
 
 const router = express.Router();
 
-router.post(
-  '/check-ada-compilance',
+router.get(
+  '/send-mail',
   middlewares.validateEmail,
-  middlewares.validateURL,
-  controllerWrapper(controllers.adaCompilance)
+  controllerWrapper(sendMail)
 );
 
 export default router;

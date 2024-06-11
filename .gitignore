@@ -4,3 +4,4 @@ node_modules
 .prettierrc
 nodemon.json
 /dist
+.vscode
