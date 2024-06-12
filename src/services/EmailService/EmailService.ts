@@ -5,9 +5,7 @@ import path from "path";
 import fs from 'fs';
 
 const senderAddress = process.env.EMAIL_USER as string;
-const cc = (process.env.EMAIL_CC as string) || "";
-const bcc = (process.env.EMAIL_BCC as string) || "";
-const replyTo = (process.env.EMAIL_REPLY_TO as string) || "";
+const cc = process.env.EMAIL_CC as string;
 
 class EmailService {
 	private static emailTransporter = nodemailer.createTransport(configs.emailTransporter);
@@ -24,8 +22,6 @@ class EmailService {
 			from: senderAddress,
 			to: email,
 			cc,
-			bcc,
-			replyTo,
 			subject: `Serhii Sydorenko CV`,
 			text: "Hello world =)",
 			attachments: [attachment],
