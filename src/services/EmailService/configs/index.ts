@@ -8,7 +8,7 @@ const pass = process.env.EMAIL_PASSWORD as string;
 export const emailTransporter = {
   host: host,
   port: port,
-  secure: false,
+  secure: true,
   auth: {
     user: user,
     pass: pass,
