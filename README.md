@@ -2,7 +2,6 @@
 [![Version](https://img.shields.io/npm/v/email-api.svg)](https://www.npmjs.com/package/email-api)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/sidor91/EmailApi#readme)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/sidor91/EmailApi/graphs/commit-activity)
-[![License: ISC](https://img.shields.io/github/license/sidor91/email-api)](#)
 
 > Simple app to get email with author's CV
 
@@ -19,6 +18,16 @@ npm install && npm run build
 ```sh
 npm start
 ```
+
+## How to use 
+
+```http
+  GET /api/send-mail?{{your email address}}
+```
+
+***
+That's it 😉
+
 
 ## Author
 
