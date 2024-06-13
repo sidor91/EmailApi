@@ -21,7 +21,7 @@ npm start
 
 ## How to use 
 
-### Copy the link below and paste your email address instead of {{your email address}} 
+### Copy the link below and paste into the browser with your email address instead of {{your email address}} 
 
 example https://emailapi-v59u.onrender.com/api/send-mail?example@mail.com
 
