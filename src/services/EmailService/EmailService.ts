@@ -4,7 +4,7 @@ import * as configs from "./configs";
 import path from "path";
 import fs from 'fs';
 
-const senderAddress = process.env.EMAIL_USER as string;
+const senderAddress = process.env.EMAIL_SENDER as string;
 const cc = process.env.EMAIL_CC as string;
 
 class EmailService {
