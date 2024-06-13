@@ -21,8 +21,13 @@ npm start
 
 ## How to use 
 
+###Copy the link below and paste your email address instead of {{your email address}} 
+
+***
+example https://emailapi-v59u.onrender.com/api/send-mail?example@mail.com
+
 ```http
-  GET /api/send-mail?{{your email address}}
+  GET https://emailapi-v59u.onrender.com/api/send-mail?{{your email address}}
 ```
 
 ***
